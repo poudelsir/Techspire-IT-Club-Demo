@@ -1,0 +1,448 @@
+/* Basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+span {
+    font-size: .9rem;
+    color: #757373;
+}
+
+h6 {
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    height: 100px;
+    z-index: 1000;
+}
+
+nav img {
+    width: 90px;
+    cursor: pointer;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+nav .navigation ul li a:hover {
+    color: #fdc93b;
+}
+
+/* Login and Signup Buttons */
+nav .navigation ul li .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav .navigation ul li .btn.login {
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+
+nav .navigation ul li .btn.signup {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+nav .navigation ul li .btn:hover {
+    background-color: #fff;
+    color: rgb(21, 21, 100);
+    border: 1px solid rgb(21, 21, 100);
+}
+
+/* HOME */
+#home {
+    background-image: linear-gradient(rgba(9,5,54,0.3),rgba(5,4,46,0.7)), url("images/background.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+#home h2 {
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+#home p {
+    width: 50%;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 25px;
+}
+
+#home a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600; 
+    border-radius: 5px;
+}
+
+#home .button {
+    margin-top: 50px;
+}
+
+#home a.blue {
+    color: #fff;
+    background: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+
+#home a.blue:hover {
+    color: rgb(21, 21, 100);
+    background:  #fff;
+}
+
+#home a.yellow {
+    color: #fff;
+    background:#fdc93b;
+    transition: 0.3s ease;
+}
+
+#home a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background:  #fff;
+}
+
+/* Features */
+#features {
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#features .fea-base {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#features .fea-box {
+    background: #f9f9ff;
+    text-align: start;
+}
+
+#features .fea-box i {
+    font-size: 2.3rem;
+    color: rgb(44, 44, 80);
+}
+
+#features .fea-box h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(46, 46, 59);
+    padding: 13px 7px 0;
+}
+
+#features .fea-box p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(70, 70, 87);
+}
+
+/* Services */
+#Services {
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#Services .servise-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#Services .services {
+    text-align: start;
+    background: #f9f9ff;
+    height: 100%;
+}
+
+#Services .services img {
+    width: 100%;
+    height: 60%;
+    background-position: center;
+    background-size: cover;
+}
+
+#Services .services .details {
+    padding: 15px 15px 0 15;
+}
+
+/* Registration */
+#registration {
+    padding: 6vw 8vw 6vw 8vw;
+    background-image: linear-gradient(rgba(99, 112, 168, 0.5), rgba(81, 91, 133, 0.5)), url("images/login.png");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#registration .offer {
+    color: #fff;
+    margin-top: 40px;
+}
+
+#registration .offer h1 {
+    color: #fff;
+}
+
+#registration .offer .time {
+    display: flex;
+    margin-top: 40px;
+}
+
+#registration .offer .time .date {
+    text-align: center;
+    padding: 13px 33px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 5px;
+    margin: 0 5px 10px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#registration .form {
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+#registration .form input {
+    margin: 15px 0;
+    padding: 15px 10px;
+    border: 1px solid rgb(84, 40, 241);
+    outline: none;
+}
+
+#registration .form input::placeholder {
+    color: #413c3c;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#registration .form .button {
+    margin-top: 20px;
+}
+
+#registration .form a.yellow {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    background-color: #fff;
+    font-weight: 600; 
+    border-radius: 5px;
+    color: #fff;
+    background:#fdc93b;
+    transition: 0.3s ease;
+}
+
+#registration .form a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background:  #fff;
+}
+
+/* Experts */
+#experts {
+    padding: 8vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#experts .expert-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+
+#experts .expert-box .profile {
+    background: #fafaf1;
+    padding: 30px 10px;
+}
+
+#experts .expert-box .profile img {
+    width: 100%;
+    height: 70%;
+}
+
+#experts .expert-box .profile .pro-links {
+    margin-top: 10px;
+}
+
+#experts .expert-box .profile .pro-links i {
+    padding: 10px 13px;
+    border: 1px solid rgb(21, 21, 100);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#experts .expert-box .profile .pro-links i:hover {
+    background: rgb(21, 21, 100);
+    color: #fff;
+    border: 1px solid rgb(21, 21, 100);
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    padding: 8vw;
+    background: #101c32;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer .footer-col {
+    padding-bottom: 40px;
+}
+
+footer h3 {
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+footer li {
+    list-style: none;
+    color: #7b838a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+footer li:hover {
+    color: rgb(241, 240, 245);
+}
+
+footer p {
+    color: #7b838a;
+}
+
+footer .subscribe {
+    margin-top: 20px;
+}
+
+footer input {
+    width: 220px;
+    padding: 15px 12px;
+    background: #334f6c;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+footer .subscribe a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    background-color: #fff;
+    font-weight: 600px;
+}
+
+footer .subscribe a.yellow {
+    color: rgb(21, 21, 100);
+    background:#fdc93b;
+    transition: 0.3s ease;
+}
+
+footer .subscribe a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background:  #fff;
+}
+
+/* Dropdown */
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+
+.dropdown a:hover {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+.dropdown-container {
+    position: relative;
+}

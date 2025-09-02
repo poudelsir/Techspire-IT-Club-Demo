@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Testimonials</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgb(35, 35, 85);
+        }
+
+        span {
+            font-size: .9rem;
+            color: #757373;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            color: rgb(24, 24, 49);
+        }
+
+        /* Hide the dropdown by default */
+        .dropdown {
+            display: none;
+            position: absolute;
+            /* Added position */
+            background-color: #fff;
+            /* Adjust background color if necessary */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+            /* Added shadow for visibility */
+            padding: 10px;
+            /* Added padding */
+            z-index: 1000;
+            /* Ensure it appears above other content */
+        }
+
+        /* Show the dropdown when hovering over the parent li */
+        .dropdown-container:hover .dropdown {
+            display: block;
+        }
+
+        /* Adjust dropdown links style */
+        .dropdown a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: rgb(21, 21, 100);
+            transition: 0.3s ease;
+        }
+
+        /* Change color on hover */
+        .dropdown a:hover {
+            background-color: #fdc93b;
+            color: #fff;
+        }
+
+        /* Ensure the dropdown is positioned correctly */
+        .dropdown-container {
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1vw 8vw;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+            height: 100px;
+            z-index: 1000;
+            /* Navbar z-index */
+        }
+
+        nav img {
+            width: 90px;
+            cursor: pointer;
+        }
+
+        nav .navigation ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav .navigation ul li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        nav .navigation ul li a {
+            text-decoration: none;
+            color: rgb(21, 21, 100);
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        nav .navigation ul li a:hover {
+            color: #fdc93b;
+        }
+
+        footer {
+            padding: 8vw;
+            background: #101c32;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-col {
+            padding-bottom: 40px;
+        }
+
+        footer h3 {
+            color: rgb(241, 240, 245);
+            font-weight: 600;
+            padding-bottom: 20px;
+        }
+
+        footer li {
+            list-style: none;
+            color: #7b838a;
+            padding: 10px 0;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3 ease;
+        }
+
+        footer li:hover {
+            color: rgb(241, 240, 245);
+        }
+
+        footer p {
+            color: #7b838a;
+        }
+
+        footer .subscribe {
+            margin-top: 20px;
+        }
+
+        footer input {
+            width: 220px;
+            padding: 15px 12px;
+            background: #334f6c;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        footer .subscribe a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 12px 15px;
+            background-color: #fff;
+            font: weight 600px;
+        }
+
+        footer .subscribe a.yellow {
+            color: rgb(21, 21, 100);
+            background: #fdc93b;
+            transition: 0.3 ease;
+        }
+
+        footer .subscribe a.yellow:hover {
+            color: rgb(21, 21, 100);
+            background: #fff;
+        }
+.wholehead{
+    height: 100vh;
+    background: #f1f0f0;
+}
+        .clubmember {
+
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .head {
+            margin-top: 10px;
+            padding-top: 110px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .testimonials-header {
+            margin-bottom: 40px;
+        }
+
+        .testimonials-header h1 {
+            font-size: 3em;
+            color: #333;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .testimonials-header p {
+            font-size: 1.2em;
+            color: #555;
+            margin: 10px 0 0;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            overflow: hidden;
+            justify-content: center;
+            position: relative;
+            gap: 20px;
+        }
+
+        .testimonial {
+            min-width: 300px;
+            background-color: #e3e2e2;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: left;
+            display: none;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .testimonial p {
+            font-size: 1em;
+            color: #777;
+            margin: 10px 0 20px;
+            line-height: 1.5;
+        }
+
+        .testimonial .client-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial .client-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .testimonial .client-info h3 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #333;
+        }
+
+        .testimonial .client-info span {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .testimonial .quote {
+            font-size: 3em;
+            color: #ff7043;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+
+        .arrow-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .arrow {
+            background-color: #050f7d;
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .arrow:hover {
+            background-color: #3305a7;
+            transform: scale(1.1);
+        }
+
+        .arrow:disabled {
+            background-color: #ffccbc;
+            cursor: not-allowed;
+        }
+
+        #prevBtn {
+            left: -70px;
+        }
+
+        #nextBtn {
+            right: -70px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .testimonial-slider {
+                flex-direction: column;
+            }
+
+            .testimonial {
+                margin: 10px 0;
+            }
+
+            .arrow {
+                display: none;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="logo" />
+        <div class="navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown-container">
+                    <a href="about.html">About Us</a>
+                    <div class="dropdown">
+                        <a href="message.html">Message From President</a>
+                        <a href="testimonial.html">Our Team</a>
+                        <a href="clubmember.html">What Our Club Members Say</a>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="news.html">News/Events</a></li>
+                <li><a href="course.html">Explore Our Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn login">Login</a></li>
+                <li><a href="signup.html" class="btn signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="wholehead">
+        <section class="head">
+            <h1>What our club members Say??</h1>
+        </section>
+        <section class="clubmember">
+            <div class="testimonials-container">
+                <div class="testimonials-header">
+                    <p>AT Techspire IT CLUB, we are proud of our CLUB Members' achievements and their experiences with us. Here's
+                        what some of our students have to say about their journey at Jigu School.</p>
+                </div>
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial" id="testimonial1">
+                        <p>"My experience as being part of Techspire IT CLUB has been nothing short of amazing. The CLUB moderators are incredibly
+                            supportive and the facilities are top-notch. I've grown both academically and personally
+                            during my time here."</p>
+                        <div class="client-info">
+                            <img src="images/club3.jpg" alt="Prabesh Shahi">
+                            <div>
+                                <h3>Pravesh Shahi</h3>
+                                <span>Club  Member Since 2023</span>
+                            </div>
+                        </div>
+                        <div class="quote">&#8221;</div>
+                    </div>
+                    <div class="testimonial" id="testimonial2">
+                        <p>"JTechspire's IT CLUB has provided me with countless opportunities to explore my interests and develop
+                            new skills. The community here is very welcoming, and I always feel encouraged to do my
+                            best."</p>
+                        <div class="client-info">
+                            <img src="images/club2.jpg" alt="Suyog Jayana">
+                            <div>
+                                <h3>Suyog Jayana</h3>
+                                <span>Club member Since 2020</span>
+                            </div>
+                        </div>
+                        <div class="quote">&#8221;</div>
+                    </div>
+                    <div class="testimonial" id="testimonial3">
+                        <p>"The learning environment at Techspire's IT CLUB is fantastic. The teachers are passionate and
+                            knowledgeable, and they always make sure we understand the material. I feel well-prepared
+                            for my future."</p>
+                        <div class="client-info">
+                            <img src="images/club1.jpg" alt="Aim kumar Yonjan">
+                            <div>
+                                <h3>Aim Kumar Yonjan</h3>
+                                <span>CLub member since 2021</span>
+                            </div>
+                        </div>
+                        <div class="quote">&#8221;</div>
+                    </div>
+                    <div class="testimonial" id="testimonial4">
+                        <p>"The office of Techspire IT CLUB has been a second home to me. The friendly atmosphere and supportive staff have
+                            made my learning experience truly enjoyable."</p>
+                        <div class="client-info">
+                            <img src="images/club5.jpg" alt="Vibhuti RL Rana">
+                            <div>
+                                <h3>Vibhuti Rana</h3>
+                                <span>Club Moderator</span>
+                            </div>
+                        </div>
+                        <div class="quote">&#8221;</div>
+                    </div>
+                    <div class="testimonial" id="testimonial5">
+                        <p>"I am grateful for the opportunities and experiences I have had at Techspire IT CLUB. The diverse
+                            extracurricular activities have helped me grow in many ways."</p>
+                        <div class="client-info">
+                            <img src="images/club4.jpg" alt="Subodh Acharya">
+                            <div>
+                                <h3>SUbodh Acharya</h3>
+                                <span>Asst. Moderator</span>
+                            </div>
+                        </div>
+                        <div class="quote">&#8221;</div>
+                    </div>
+                </div>
+                <button class="arrow" id="prevBtn" onclick="prevTestimonial()">&#8592;</button>
+                <button class="arrow" id="nextBtn" onclick="nextTestimonial()">&#8594;</button>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>News letter</h3>
+            <p>Hello hello hello</p>
+            <div class="subscribe">
+                <input type="text" placeholder="your email address">
+                <a href="#" class="yellow">Subscribe</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @2024 All Rights reserved | This website is designed by Basant Poudel</p>
+            <div class="pro-links">
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let currentIndex = 0;
+
+        function updateTestimonials() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            testimonials.forEach((testimonial, index) => {
+                if (index === currentIndex || index === currentIndex + 1) {
+                    testimonial.style.display = 'block';
+                } else {
+                    testimonial.style.display = 'none';
+                }
+            });
+
+            document.getElementById('prevBtn').disabled = currentIndex === 0;
+            document.getElementById('nextBtn').disabled = currentIndex >= testimonials.length - 2;
+        }
+
+        function prevTestimonial() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateTestimonials();
+            }
+        }
+
+        function nextTestimonial() {
+            const testimonials = document.querySelectorAll('.testimonial');
+            if (currentIndex < testimonials.length - 2) {
+                currentIndex++;
+                updateTestimonials();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTestimonials();
+            setInterval(() => {
+                if (currentIndex < testimonials.length - 2) {
+                    nextTestimonial();
+                } else {
+                    currentIndex = 0;
+                    updateTestimonials();
+                }
+            }, 5000); // Change slide every 5 seconds
+        });
+    </script>
+</body>
+
+</html>

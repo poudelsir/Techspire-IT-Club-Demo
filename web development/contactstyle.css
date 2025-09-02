@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+    margin-bottom: 1rem;
+}
+h2 {
+    font-size: 2rem;
+    color: rgb(35, 35, 85);
+    margin-bottom: 1rem;
+}
+h3 {
+    font-size: 1.5rem;
+    color: rgb(35, 35, 85);
+    margin-bottom: 1rem;
+}
+p {
+    font-size: 1rem;
+    color: #757373;
+    margin-bottom: 1rem;
+}
+textarea, input, button {
+    font-family: 'Poppins', sans-serif;
+}
+textarea, input {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #fdc93b;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+button:hover {
+    background-color: #fcb03b;
+}
+/* Login and Signup Buttons */
+nav .navigation ul li .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav .navigation ul li .btn.login {
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+
+nav .navigation ul li .btn.signup {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+nav .navigation ul li .btn:hover {
+    background-color: #fff;
+    color: rgb(21, 21, 100);
+    border: 1px solid rgb(21, 21, 100);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    height: 100px;
+    z-index: 1000;
+}
+nav img {
+    width: 90px;
+    cursor: pointer;
+}
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+nav .navigation ul li a:hover {
+    color: #fdc93b;
+}
+
+/* Contact Page */
+.contact-section {
+    padding: 150px 8vw 50px;
+    background: #f4f4f4;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.contact-form, .location-info, .support-info, .faq, .feedback-section {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form form, .feedback-section {
+    display: flex;
+    flex-direction: column;
+}
+.map {
+    margin-top: 1rem;
+}
+.map iframe {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+}
+ul {
+    padding-left: 20px;
+}
+ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+}
+
+/* FAQ Section */
+.faq-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Support and FAQ Side by Side */
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.location-info {
+    flex: 1;
+}
+.support-info {
+    flex: 1;
+}
+
+/* Footer */
+footer {
+    padding: 8vw;
+    background: #101c32;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+footer .footer-col {
+    padding-bottom: 40px;
+}
+footer h3 {
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+footer li {
+    list-style: none;
+    color: #7b838a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+footer li:hover {
+    color: rgb(241, 240, 245);
+}
+footer p {
+    color: #7b838a;
+}
+footer .subscribe {
+    margin-top: 20px;
+}
+footer input {
+    width: 220px;
+    padding: 15px 12px;
+    background: #334f6c;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+footer .subscribe a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    background-color: #fff;
+    font-weight: 600px; 
+}
+footer .subscribe a.yellow {
+    color: rgb(21, 21, 100);
+    background: #fdc93b;
+    transition: 0.3s ease;
+}
+footer .subscribe a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background: #fff;
+}
+.footer-col .pro-links i {
+    color: #7b838a;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.footer-col .pro-links i:hover {
+    color: rgb(241, 240, 245);
+}
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 4rem;
+    color: #7b838a;
+}
+/* Hide the dropdown by default */
+.dropdown {
+    display: none;
+    position: absolute; /* Added position */
+    background-color: #fff; /* Adjust background color if necessary */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); /* Added shadow for visibility */
+    padding: 10px; /* Added padding */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Show the dropdown when hovering over the parent li */
+.dropdown-container:hover .dropdown {
+    display: block;
+}
+
+/* Adjust dropdown links style */
+.dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+
+/* Change color on hover */
+.dropdown a:hover {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+/* Ensure the dropdown is positioned correctly */
+.dropdown-container {
+    position: relative;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techspire IT Club - About Us</title>
+    <link rel="stylesheet" href="aboutusstyle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="logo" />
+        <div class="navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown-container">
+                    <a href="about.html">About Us</a>
+                    <div class="dropdown">
+                        <a href="message.html">Message From President</a>
+                        <a href="testimonial.html">Our Team</a>
+                        <a href="clubmember.html">What Our Club Members Say</a>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="news.html">News/Events</a></li>
+                <li><a href="course.html">Explore Our Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn login">Login</a></li>
+                <li><a href="signup.html" class="btn signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="section-container">
+        <div class="detel">
+            <h1>Our Mission</h1>
+            <p>At Techspire IT Club, our mission is to foster innovation and creativity in the field of information technology.
+                <br> We aim to create a collaborative environment where students can learn, grow, and contribute to the future of tech.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="image">
+            <!-- <img src="image/shape.png" alt="" class="shape"> -->
+            <img src="images/me.png" alt="" class="me">
+        </div>
+    </section>
+    <section class="section-container vision-container">
+        <h1>Our Vision</h1>
+        <div class="tiles-container">
+            <div class="tile" onclick="openModal('modal1')">
+                <img src="images/vision1.jpg" alt="Vision 1">
+                <h3>Innovate with Technology</h3>
+            </div>
+            <div class="tile" onclick="openModal('modal2')">
+                <img src="images/vision2.jpg" alt="Vision 2">
+                <h3>Empower Future Leaders</h3>
+            </div>
+            <div class="tile" onclick="openModal('modal3')">
+                <img src="images/vision3.jpg" alt="Vision 3">
+                <h3>Foster Collaboration and Community</h3>
+            </div>
+            <div class="tile" onclick="openModal('modal4')">
+                <img src="images/vision4.jpg" alt="Vision 4">
+                <h3>Promote Lifelong Learning</h3>
+            </div>
+        </div>
+
+        <!-- Modal 1 -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal1')">&times;</span>
+                <img src="images/vision1.jpg" alt="Vision 1">
+                <h3>Innovate with Technology</h3>
+                <p>Our primary goal is to drive technological innovation by exploring new technologies and methodologies. We aim to be at the forefront of technological advancements, creating solutions that make a meaningful impact on the world.</p>
+            </div>
+        </div>
+
+        <!-- Modal 2 -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal2')">&times;</span>
+                <img src="images/vision2.jpg" alt="Vision 2">
+                <h3>Empower Future Leaders</h3>
+                <p>We are dedicated to empowering the next generation of technology leaders. By providing mentorship, training, and hands-on experience, we prepare students to lead and excel in the ever-evolving tech industry.</p>
+            </div>
+        </div>
+
+        <!-- Modal 3 -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal3')">&times;</span>
+                <img src="images/vision3.jpg" alt="Vision 3">
+                <h3>Vision 3</h3>
+                <p>We believe in the power of collaboration. Our vision is to build a strong, supportive community where students, industry professionals, and academic institutions work together to solve complex problems and achieve common goals.</p>
+            </div>
+        </div>
+
+        <!-- Modal 4 -->
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal4')">&times;</span>
+                <img src="images/vision4.jpg" alt="Vision 4">
+                <h3>Vision 4</h3>
+                <p>In a rapidly changing technological landscape, continuous learning is essential. We are committed to fostering a culture of lifelong learning, encouraging both students and professionals to stay curious and keep developing their skills.</p>
+            </div>
+        </div>
+    </section>
+ 
+    <footer>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top Products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for the latest updates.</p>
+            <div class="subscribe">
+                <input type="text" placeholder="Your email address">
+                <a href="#" class="yellow">Subscribe</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2024 All Rights Reserved | This website is designed by Basant Poudel</p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

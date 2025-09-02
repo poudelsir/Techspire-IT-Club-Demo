@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+span {
+    font-size: .9rem;
+    color: #757373;
+}
+h6 {
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+/* Hide the dropdown by default */
+.dropdown {
+    display: none;
+    position: absolute; /* Added position */
+    background-color: #fff; /* Adjust background color if necessary */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); /* Added shadow for visibility */
+    padding: 10px; /* Added padding */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Show the dropdown when hovering over the parent li */
+.dropdown-container:hover .dropdown {
+    display: block;
+}
+
+/* Adjust dropdown links style */
+.dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+
+/* Change color on hover */
+.dropdown a:hover {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+/* Ensure the dropdown is positioned correctly */
+.dropdown-container {
+    position: relative;
+}
+/* Login and Signup Buttons */
+nav .navigation ul li .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav .navigation ul li .btn.login {
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+
+nav .navigation ul li .btn.signup {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+nav .navigation ul li .btn:hover {
+    background-color: #fff;
+    color: rgb(21, 21, 100);
+    border: 1px solid rgb(21, 21, 100);
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    height: 100px;
+    z-index: 1000; /* Navbar z-index */
+}
+nav img {
+    width: 90px;
+    cursor: pointer;
+}
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+nav .navigation ul li a:hover {
+    color: #fdc93b;
+}
+footer {
+    padding: 8vw;
+    background: #101c32;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+footer .footer-col {
+    padding-bottom: 40px;
+}
+footer h3 {
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+footer li {
+    list-style: none;
+    color: #7b838a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+footer li:hover {
+    color: rgb(241, 240, 245);
+}
+footer p {
+    color: #7b838a;
+}
+footer .subscribe {
+    margin-top: 20px;
+}
+footer input {
+    width: 220px;
+    padding: 15px 12px;
+    background: #334f6c;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+footer .subscribe a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    background-color: #fff;
+    font: weight 600px; 
+}
+footer .subscribe a.yellow {
+    color: rgb(21, 21, 100);
+    background:#fdc93b;
+    transition: 0.3 ease;
+}
+footer .subscribe a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background:  #fff;
+}
+
+
+
+.container{
+    width: 100%;
+    padding-top: 50px;
+}
+.news{
+    color: rgb(4, 2, 77);
+}
+.news-section{
+    width: 95%;
+    margin: 20px auto;
+}
+.news-section .title{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+.news-section .title h3{
+    font-size: 30px;
+    color: rgb(16, 1, 77);
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+.blog-section .title p{
+    font-size: 18px;
+    color:  rgb(16, 1, 77);
+    margin-top: 20px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    margin: 25px auto;
+}
+.cards .card {
+    width: 100%;
+    position: relative;
+}
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+.content{
+    padding: 15px 20px;
+}
+.content h4{
+    font-size: 20px;
+    color:  rgb(16, 1, 77);
+    font-weight: 500;
+}
+.content p{
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
+.content a{
+    text-decoration: none;
+    color:  rgb(16, 1, 77);
+    margin-top: 12px;
+    display: inline-block;
+    background-color:yellow;
+    padding: 8px 15px;
+}
+.card .posted-date{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    background-color: bisque;
+    padding: 6px 15px;
+}
+
+@media screen and (max-width: 992px){
+    .cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px){
+    .cards{
+        grid-template-columns: 1fr;
+    }
+}

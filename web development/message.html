@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techspire IT club</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+        <style>
+            
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgb(35, 35, 85);
+        }
+
+        span {
+            font-size: .9rem;
+            color: #757373;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            color: rgb(24, 24, 49);
+        }
+
+        /* Hide the dropdown by default */
+        .dropdown {
+            display: none;
+            position: absolute;
+            /* Added position */
+            background-color: #fff;
+            /* Adjust background color if necessary */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+            /* Added shadow for visibility */
+            padding: 10px;
+            /* Added padding */
+            z-index: 1000;
+            /* Ensure it appears above other content */
+        }
+
+        /* Show the dropdown when hovering over the parent li */
+        .dropdown-container:hover .dropdown {
+            display: block;
+        }
+
+        /* Adjust dropdown links style */
+        .dropdown a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: rgb(21, 21, 100);
+            transition: 0.3s ease;
+        }
+
+        /* Change color on hover */
+        .dropdown a:hover {
+            background-color: #fdc93b;
+            color: #fff;
+        }
+
+        /* Ensure the dropdown is positioned correctly */
+        .dropdown-container {
+            position: relative;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1vw 8vw;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+            height: 100px;
+            z-index: 1000;
+            /* Navbar z-index */
+        }
+
+        nav img {
+            width: 90px;
+            cursor: pointer;
+        }
+
+        nav .navigation ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav .navigation ul li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        nav .navigation ul li a {
+            text-decoration: none;
+            color: rgb(21, 21, 100);
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        nav .navigation ul li a:hover {
+            color: #fdc93b;
+        }
+
+        footer {
+            padding: 8vw;
+            background: #101c32;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-col {
+            padding-bottom: 40px;
+        }
+
+        footer h3 {
+            color: rgb(241, 240, 245);
+            font-weight: 600;
+            padding-bottom: 20px;
+        }
+
+        footer li {
+            list-style: none;
+            color: #7b838a;
+            padding: 10px 0;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3 ease;
+        }
+
+        footer li:hover {
+            color: rgb(241, 240, 245);
+        }
+
+        footer p {
+            color: #7b838a;
+        }
+
+        footer .subscribe {
+            margin-top: 20px;
+        }
+
+        footer input {
+            width: 220px;
+            padding: 15px 12px;
+            background: #334f6c;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        footer .subscribe a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 12px 15px;
+            background-color: #fff;
+            font: weight 600px;
+        }
+
+        footer .subscribe a.yellow {
+            color: rgb(21, 21, 100);
+            background: #fdc93b;
+            transition: 0.3 ease;
+        }
+
+        footer .subscribe a.yellow:hover {
+            color: rgb(21, 21, 100);
+            background: #fff;
+        }
+        .wholemessage{
+            padding-top: 110px;
+        }
+        .messageofpresident{
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .principal-message {
+            display: flex;
+            align-items: flex-start;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .principal-message img {
+            max-width: 400px;
+            border-radius: 0 10px 10px 0;
+            margin-right: 20px;
+        }
+
+        .message-content {
+            padding: 20px;
+            flex: 1;
+            text-align: left;
+        }
+
+        .message-content h2 {
+            color: #ff7096;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .message-content p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .principal-info {
+            margin-top: 20px;
+        }
+
+        .principal-info h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .principal-info span {
+            color: #777;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .principal-message {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .principal-message img {
+                max-width: 100%;
+                border-radius: 10px 10px 0 0;
+                margin-bottom: 20px;
+            }
+
+            .message-content {
+                padding: 20px;
+            }
+        }
+    </style>
+
+        </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="logo" />
+        <div class="navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown-container">
+                    <a href="about.html">About Us</a>
+                    <div class="dropdown">
+                        <a href="message.html">Message From President</a>
+                        <a href="testimonial.html">Our Team</a>
+                        <a href="clubmember.html">What Our Club Members Say</a>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="news.html">News/Events</a></li>
+                <li><a href="course.html">Explore Our Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn login">Login</a></li>
+                <li><a href="signup.html" class="btn signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="wholemessage">
+        <section class="messageofpresident">
+<h1>
+    Message from Club President 
+</h1>
+        </section>
+        <div class="container">
+            <div class="principal-message">
+                <img src="images/member1.JPG" alt="President Image">
+                <div class="message-content">
+                    <p> Dear Techspire IT Club Members and Prospective Students,
+                   </p> <br>
+                  <P>  As the President of Techspire IT Club, I am thrilled to welcome you to our vibrant community of technology enthusiasts. Our club is a space where passion for IT meets innovation, and where ideas transform into groundbreaking projects.
+                  </P>  <br>
+                 <p>   In today’s rapidly evolving tech landscape, staying ahead requires not just academic knowledge but also practical experience and collaborative skills. At Techspire IT Club, we are committed to providing opportunities that bridge the gap between classroom learning and real-world applications. Whether it’s through our hands-on workshops, engaging hackathons, or insightful guest lectures, we aim to foster an environment where every member can grow and thrive.
+                  </p>  <br>
+                  <p>  Our club is not just about learning new technologies; it’s about creating an inclusive and dynamic community. We believe that collaboration and creativity are the keys to solving complex problems and driving technological advancement. By joining us, you will have the chance to work with like-minded peers, develop your skills, and contribute to projects that make a real impact.
+                   </p> <br>
+                  <p>  I encourage each of you to take full advantage of the resources and events we offer. Participate in our activities, share your ideas, and immerse yourself in the exciting world of technology. Your journey with Techspire IT Club is not just about enhancing your technical expertise but also about building lasting relationships and discovering your potential.
+                    </p><br>
+                    <p>Thank you for being part of our club. Together, let’s push the boundaries of technology and make a difference.
+                   </p> <br>
+                    <div class="principal-info">
+                        <h3>Basant Poudel, It CLUB, Techspire</h3>
+                        <span>President</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>News letter</h3>
+            <p>Hello hello hello</p>
+            <div class="subscribe">
+                <input type="text" placeholder="your email address">
+                <a href="#" class="yellow">Subscribe</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @2024 All Rights reserved | This website is designed by Basant Poudel</p>
+            <div class="pro-links">
+                <div class="pro-links">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

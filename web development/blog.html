@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techspire IT Club</title>
+    <link rel="stylesheet" href="blogstyle.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+        integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgb(35, 35, 85);
+        }
+        span {
+            font-size: .9rem;
+            color: #757373;
+        }
+        h6 {
+            font-size: 1.1rem;
+            color: rgb(24, 24, 49);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1vw 8vw;
+            align-items: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+            height: 100px;
+            z-index: 1000;
+        }
+        nav img {
+            width: 90px;
+            cursor: pointer;
+        }
+        nav .navigation ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        nav .navigation ul li {
+            list-style: none;
+            margin-left: 30px;
+        }
+        nav .navigation ul li a {
+            text-decoration: none;
+            color: rgb(21, 21, 100);
+            font-size: 16px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+        nav .navigation ul li a:hover {
+            color: #fdc93b;
+        }
+
+        /* Login and Signup Buttons */
+nav .navigation ul li .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav .navigation ul li .btn.login {
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+
+nav .navigation ul li .btn.signup {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+nav .navigation ul li .btn:hover {
+    background-color: #fff;
+    color: rgb(21, 21, 100);
+    border: 1px solid rgb(21, 21, 100);
+}
+
+        /* Hide the dropdown by default */
+.dropdown {
+    display: none;
+    position: absolute; /* Added position */
+    background-color: #fff; /* Adjust background color if necessary */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); /* Added shadow for visibility */
+    padding: 10px; /* Added padding */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Show the dropdown when hovering over the parent li */
+.dropdown-container:hover .dropdown {
+    display: block;
+}
+
+/* Adjust dropdown links style */
+.dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+
+/* Change color on hover */
+.dropdown a:hover {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+/* Ensure the dropdown is positioned correctly */
+.dropdown-container {
+    position: relative;
+}
+
+
+        /* Photo Slider */
+        .photo-slider {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 100px; /* Adjust based on nav height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .photo-slider img {
+            width: 90%;
+            height:400px;
+            flex-shrink: 0;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        /* Description Section */
+        .description-section {
+            text-align: center;
+            padding: 2rem 8vw;
+            background-color: #f9f9f9;
+        }
+        .description-section .description-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .description-section .description-content p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+        .description-section .section-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        .description-section .continue-reading {
+            background-color: #fdc93b;
+            color: rgb(21, 21, 100);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.3s ease;
+        }
+        .description-section .continue-reading:hover {
+            background-color: rgb(21, 21, 100);
+            color: #fff;
+        }
+        .description-section .published-date {
+            font-size: 0.9rem;
+            color: #757373;
+        }
+
+        /* Footer */
+        footer {
+            padding: 8vw;
+            background: #101c32;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        footer .footer-col {
+            padding-bottom: 40px;
+        }
+        footer h3 {
+            color: rgb(241, 240, 245);
+            font-weight: 600;
+            padding-bottom: 20px;
+        }
+        footer li {
+            list-style: none;
+            color: #7b838a;
+            padding: 10px 0;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        footer li:hover {
+            color: rgb(241, 240, 245);
+        }
+        footer p {
+            color: #7b838a;
+        }
+        footer .subscribe {
+            margin-top: 20px;
+        }
+        footer input {
+            width: 220px;
+            padding: 15px 12px;
+            background: #334f6c;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+        footer .subscribe a {
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 12px 15px;
+            background-color: #fff;
+            font-weight: 600;
+        }
+        footer .subscribe a.yellow {
+            color: rgb(21, 21, 100);
+            background: #fdc93b;
+            transition: 0.3s ease;
+        }
+        footer .subscribe a.yellow:hover {
+            color: rgb(21, 21, 100);
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logo.png" alt="logo" />
+        <div class="navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li class="dropdown-container">
+                    <a href="about.html">About Us</a>
+                    <div class="dropdown">
+                        <a href="message.html">Message From President</a>
+                        <a href="testimonial.html">Our Team</a>
+                        <a href="clubmember.html">What Our Club Members Say</a>
+                    </div>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="news.html">News/Events</a></li>
+                <li><a href="course.html">Explore Our Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn login">Login</a></li>
+                <li><a href="signup.html" class="btn signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="photo-slider">
+        <div class="slides">
+            <img src="images/background.jpg" alt="Slide 1">
+            <img src="images/image2.jpg" alt="Slide 2">
+            <img src="images/image3.png" alt="Slide 3">
+        </div>
+    </section>
+
+    <section class="description-section">
+        <div class="description-content">
+            <p>
+                This is the description of the first set of photos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+            </p>
+            <div class="section-footer">
+                <a href="#" class="continue-reading">Continue Reading</a>
+                <span class="published-date">Published on: August 4, 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-slider">
+        <div class="slides">
+            <img src="images/background.jpg" alt="Slide 1">
+            <img src="images/image2.jpg" alt="Slide 2">
+            <img src="images/image3.png" alt="Slide 3">
+        </div>
+    </section>
+
+    <section class="description-section">
+        <div class="description-content">
+            <p>
+                This is the description of the second set of photos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+            </p>
+            <div class="section-footer">
+                <a href="#" class="continue-reading">Continue Reading</a>
+                <span class="published-date">Published on: August 4, 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-slider">
+        <div class="slides">
+            <img src="images/background.jpg" alt="Slide 1">
+            <img src="images/image2.jpg" alt="Slide 2">
+            <img src="images/image3.png" alt="Slide 3">
+        </div>
+    </section>
+
+    <section class="description-section">
+        <div class="description-content">
+            <p>
+                This is the description of the third set of photos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.
+            </p>
+            <div class="section-footer">
+                <a href="#" class="continue-reading">Continue Reading</a>
+                <span class="published-date">Published on: August 4, 2024</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Top products</h3>
+            <li>Manage Reputation</li>
+            <li>Power Tools</li>
+            <li>Personality</li>
+            <li>Success</li>
+        </div>
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <p>Hello hello hello</p>
+            <div class="subscribe">
+                <input type="text" placeholder="Your email address" />
+                <a href="#" class="yellow">Subscribe</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>
+                Copyright @2024 All Rights Reserved | This website is designed by
+                Basant Poudel
+            </p>
+            <div class="pro-links">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slides');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            slides.forEach((slideSet, index) => {
+                const images = slideSet.querySelectorAll('img');
+                images.forEach(image => image.style.display = 'none');
+                images[slideIndex].style.display = 'block';
+            });
+
+            slideIndex++;
+            if (slideIndex >= slides[0].querySelectorAll('img').length) {
+                slideIndex = 0;
+            }
+
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        showSlides();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+span {
+    font-size: .9rem;
+    color: #757373;
+}
+h6 {
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+/* Login and Signup Buttons */
+nav .navigation ul li .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+nav .navigation ul li .btn.login {
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+}
+
+nav .navigation ul li .btn.signup {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+nav .navigation ul li .btn:hover {
+    background-color: #fff;
+    color: rgb(21, 21, 100);
+    border: 1px solid rgb(21, 21, 100);
+}
+
+/* Hide the dropdown by default */
+.dropdown {
+    display: none;
+    position: absolute; /* Added position */
+    background-color: #fff; /* Adjust background color if necessary */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); /* Added shadow for visibility */
+    padding: 10px; /* Added padding */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Show the dropdown when hovering over the parent li */
+.dropdown-container:hover .dropdown {
+    display: block;
+}
+
+/* Adjust dropdown links style */
+.dropdown a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    transition: 0.3s ease;
+}
+
+/* Change color on hover */
+.dropdown a:hover {
+    background-color: #fdc93b;
+    color: #fff;
+}
+
+/* Ensure the dropdown is positioned correctly */
+.dropdown-container {
+    position: relative;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    height: 100px;
+    z-index: 1000; /* Navbar z-index */
+}
+nav img {
+    width: 90px;
+    cursor: pointer;
+}
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+nav .navigation ul li a:hover {
+    color: #fdc93b;
+}
+footer {
+    padding: 8vw;
+    background: #101c32;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+footer .footer-col {
+    padding-bottom: 40px;
+}
+footer h3 {
+    color: rgb(241, 240, 245);
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+footer li {
+    list-style: none;
+    color: #7b838a;
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3 ease;
+}
+footer li:hover {
+    color: rgb(241, 240, 245);
+}
+footer p {
+    color: #7b838a;
+}
+footer .subscribe {
+    margin-top: 20px;
+}
+footer input {
+    width: 220px;
+    padding: 15px 12px;
+    background: #334f6c;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+footer .subscribe a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    background-color: #fff;
+    font: weight 600px; 
+}
+footer .subscribe a.yellow {
+    color: rgb(21, 21, 100);
+    background:#fdc93b;
+    transition: 0.3 ease;
+}
+footer .subscribe a.yellow:hover {
+    color: rgb(21, 21, 100);
+    background:  #fff;
+}
+/* Course Section */
+#courses {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.head{
+    padding-top: 110px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#courses h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#courses {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+#courses h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: rgb(35, 35, 85);
+}
+
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.courses_col {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.courses_col img {
+    width: 100%;
+    height: auto;
+}
+
+.courses_col h3 {
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+.courses_col p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.courses_col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Facilities Section */
+#fac {
+    padding: 20px;
+}
+
+#fac h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fac-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 50px;
+}
+
+.fac_col {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.fac_col:hover {
+    transform: translateY(-10px);
+    background-color: #f4f4f4;
+    border: 1px solid #333;
+}
+
+.fac_col img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.fac_col h3 {
+    margin: 10px 0;
+}
+
+.fac_col p {
+    margin: 0;
+}
+
+/* Advanced Courses Section */
+.course-section {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+}
+
+.course-card h3 {
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+.course-card p {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.details-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 20px 20px 20px;
+    position: relative;
+}
+
+.details-btn:hover {
+    background-color: #555;
+}
+
+.details-btn .tooltip {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.details-btn .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.details-btn:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
